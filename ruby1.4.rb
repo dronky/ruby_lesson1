@@ -19,5 +19,5 @@ if (d=b**2-4*a*c) == 0
 elsif d<0
 	puts "no roots of equation"
 elsif d>0
-	puts "x1 = #{(-b+Math.sqrt(d))/2*a}\nx2 = #{(-b-Math.sqrt(d))/2*a}"
+	puts "x1 = #{(-b+Math.sqrt(d))/(2*a)}\nx2 = #{(-b-Math.sqrt(d))/(2*a)}"
 end
