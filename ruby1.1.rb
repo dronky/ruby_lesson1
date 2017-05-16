@@ -8,7 +8,7 @@ name = gets.chomp
 puts 'Fine, now i want to know your height'
 height = gets.chomp.to_i
 best_weight = height - 110
-if best_weight >= 0
-puts "Ok, #{name}, yor best weight is #{best_weight}"
+if best_weight <= 0
+	puts "Ok, #{name}, yor best weight is #{best_weight}"
 else puts "Your weight is good"
 end
