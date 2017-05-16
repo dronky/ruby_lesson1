@@ -11,13 +11,27 @@
 # Если все 3 стороны равны, то треугольник равнобедренный и равносторонний,
 # но не прямоугольный.
 puts "Enter a b c of triangle (with delimiter ','):"
-sides = gets.chomp.split(',')
-a = sides[0].to_f
-b = sides[1].to_f
-c = sides[2].to_f
-if (a**2 + b**2) == c**2
+sides = gets.chomp.split(',').map {|i| Float(i) }
+a = sides[0]
+b = sides[1]
+c = sides[2]
+case sides.max
+when a
+  if (c**2 + b**2) == a**2
 	puts 'triangle is rectangular'
-elsif a == b && a == c
+  end
+when b
+  if (a**2 + c**2) == b**2
+  	puts 'triangle is rectangular'
+  end
+when c
+  if (a**2 + b**2) == c**2
+	puts 'triangle is rectangular'
+  end
+else
+  puts "something went wrong"
+end
+if [a, c].include? b
 	puts 'triangle is equilateral and isosceles'		
 elsif a == b || a == c || b == c
 		puts 'triangle is isosceles'	
