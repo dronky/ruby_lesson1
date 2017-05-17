@@ -10,14 +10,16 @@
 #  вернет 4, т.е. квадратный корень из 16.
 
 puts "Enter a b c (with delimiter ','):"
-sides = gets.chomp.split(',').map {|i| Float(i) }
-a = sides[0]
-b = sides[1]
-c = sides[2]
-if (d=b**2-4*a*c) == 0
-	puts "x = #{(-b)/2*a}"
-elsif d<0
+coefficients = gets.chomp.split(',').map(&:to_f)
+d = coefficients[1]**2-4*coefficients[0]*coefficients[2]
+if d == 0
+	x  = -coefficients[1]/(2*coefficients[0])
+	puts "x = #{x}"
+elsif d < 0
 	puts "no roots of equation"
-elsif d>0
-	puts "x1 = #{(-b+Math.sqrt(d))/(2*a)}\nx2 = #{(-b-Math.sqrt(d))/(2*a)}"
+elsif d > 0
+	x1 = -(coefficients[1]+Math.sqrt(d))/(2*coefficients[0])
+	x2 = -(coefficients[1]-Math.sqrt(d))/(2*coefficients[0])
+	puts "x1 = #{x1}"
+	puts "x2 = #{x2}"
 end

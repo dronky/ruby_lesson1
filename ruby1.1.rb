@@ -6,9 +6,10 @@
 puts 'Hello. Let me know your name'
 name = gets.chomp
 puts 'Fine, now i want to know your height'
-height = gets.chomp.to_i
+height = gets.chomp.to_f
 best_weight = height - 110
-if best_weight <= 0
+if best_weight > 0
 	puts "Ok, #{name}, yor best weight is #{best_weight}"
-else puts "Your weight is good"
+else 
+	puts "Ok, #{name}, your weight is good"
 end
